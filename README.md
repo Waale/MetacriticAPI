@@ -1,2 +1,2 @@
 # MetacriticAPI
-API for the Metacritic website
+Java API for the Metacritic website
