@@ -12,6 +12,8 @@ import java.util.List;
 public class MetacriticMovie extends MetacriticReview {
     public static String URL_BASE = IMetacriticAPI.URL_BASE + "movie/";
 
+    public static String URL_SEARCH = IMetacriticAPI.URL_SEARCH + "movie/";
+
     private static final String ACTORS_SELECTOR = ".summary_cast span:not(.label) a";
 
     private static final String DIRECTOR_SELECTOR = ".director a span";
@@ -32,6 +34,8 @@ public class MetacriticMovie extends MetacriticReview {
 
     private static final String TRAILER_SELECTOR = ".product_header #video_holder_wrapper";
 
+    private static final String USER_SCORE_SELECTOR = ".users_col div.user";
+
     public MetacriticMovie() {
         super();
     }
@@ -48,27 +52,30 @@ public class MetacriticMovie extends MetacriticReview {
         setRating(page.getFieldAsText(RATING_SELECTOR));
         setRuntime(page.getFieldAsText(RUNTIME_SELECTOR));
         setTrailer(page.getField(TRAILER_SELECTOR).attr("data-mcvideourl"));
+        setUserScore(page.getFieldAsText(USER_SCORE_SELECTOR));
     }
 
-    List<String> actors;
+    private List<String> actors;
 
-    String director;
+    private String director;
 
-    List<String> genres;
+    private List<String> genres;
 
-    String rating;
+    private String rating;
 
-    Date releaseDate;
+    private Date releaseDate;
 
-    String runtime;
+    private String runtime;
 
-    String score;
+    private String score;
 
-    String summary;
+    private String summary;
 
-    String title;
+    private String title;
 
-    String trailer;
+    private String trailer;
+
+    private String userScore;
 
     public List<String> getActors() {
         return actors;
@@ -148,5 +155,13 @@ public class MetacriticMovie extends MetacriticReview {
 
     public void setTrailer(String trailer) {
         this.trailer = trailer;
+    }
+
+    public String getUserScore() {
+        return userScore;
+    }
+
+    public void setUserScore(String userScore) {
+        this.userScore = userScore;
     }
 }

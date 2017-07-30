@@ -23,6 +23,6 @@ public class MetacriticAPI implements IMetacriticAPI {
     }
 
     public String parseNameForUrl(String name) {
-        return name.replace(" ", "-").replace("'", "").toLowerCase();
+        return name.replace(" ", "-").replace("'", "").replace(":", "").toLowerCase();
     }
 }

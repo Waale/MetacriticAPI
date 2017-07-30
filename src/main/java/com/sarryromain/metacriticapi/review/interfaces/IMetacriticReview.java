@@ -30,4 +30,8 @@ public interface IMetacriticReview {
     String getTrailer();
 
     void setTrailer(String newTrailer);
+
+    String getUserScore();
+
+    void setUserScore(String newUserScore);
 }

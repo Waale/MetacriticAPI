@@ -1,11 +1,15 @@
+import com.sarryromain.metacriticapi.core.MetacriticAPI;
+import com.sarryromain.metacriticapi.core.MetacriticPage;
 import com.sarryromain.metacriticapi.review.MetacriticMovie;
 import com.sarryromain.metacriticapi.service.MetacriticMovieService;
 import org.junit.Test;
 
+import java.util.List;
+
 /**
  * Created by Romain on 29/07/2017.
  */
-public class MainTest {
+public class MovieTest {
     @Test
     public void movieTest() {
         MetacriticMovieService service = new MetacriticMovieService();
@@ -13,6 +17,7 @@ public class MainTest {
         System.out.println("MOVIE TEST");
         System.out.println("Title : " + movie.getTitle());
         System.out.println("Score : " + movie.getScore());
+        System.out.println("User Score : " + movie.getUserScore());
         System.out.println("Release Date : " + movie.getReleaseDate());
         System.out.print("Actors :");
         for (String actor : movie.getActors()) {
@@ -29,5 +34,15 @@ public class MainTest {
         System.out.println("Rating : " + movie.getRating());
         System.out.println("Runtime : " + movie.getRuntime());
         System.out.println("Trailer : " + movie.getTrailer());
+    }
+
+    @Test
+    public void movieSearchTest() {
+        MetacriticMovieService service = new MetacriticMovieService();
+        MetacriticAPI api = new MetacriticAPI();
+        List<String> movies = service.search("300");
+        for (String movie : movies) {
+            System.out.println(api.parseNameForUrl(movie));
+        }
     }
 }
