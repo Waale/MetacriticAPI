@@ -1,5 +1,6 @@
+package com.sarryromain.metacriticapi;
+
 import com.sarryromain.metacriticapi.core.MetacriticAPI;
-import com.sarryromain.metacriticapi.core.MetacriticPage;
 import com.sarryromain.metacriticapi.review.MetacriticMovie;
 import com.sarryromain.metacriticapi.service.MetacriticMovieService;
 import org.junit.Test;

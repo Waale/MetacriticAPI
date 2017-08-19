@@ -4,14 +4,13 @@ import com.sarryromain.metacriticapi.core.MetacriticAPI;
 import com.sarryromain.metacriticapi.core.MetacriticPage;
 import com.sarryromain.metacriticapi.core.interfaces.IMetacriticAPI;
 import com.sarryromain.metacriticapi.review.MetacriticMovie;
-import com.sarryromain.metacriticapi.service.interfaces.IMetacriticReviewService;
 
 import java.util.List;
 
 /**
  * Created by Romain on 29/07/2017.
  */
-public class MetacriticMovieService implements IMetacriticReviewService {
+public class MetacriticMovieService {
     private final static String SEARCH_SELECTOR = ".search_results .product_title a";
 
     public MetacriticMovieService() {
