@@ -25,7 +25,7 @@ public class MetacriticGameService {
     }
 
     public List<String> search(String title) {
-        MetacriticPage page = api.getPageByUrl(MetacriticGame.URL_SEARCH + title + IMetacriticAPI.URL_SEARCH_END);
+        MetacriticPage page = api.getPageByUrl(MetacriticGame.URL_SEARCH + api.parseNameForUrl(title) + IMetacriticAPI.URL_SEARCH_END);
         return page.getFieldsAsText(SEARCH_SELECTOR);
     }
 }

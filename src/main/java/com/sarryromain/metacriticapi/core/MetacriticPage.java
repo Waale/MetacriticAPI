@@ -29,12 +29,12 @@ public class MetacriticPage {
         this.htmlDom = htmlDom;
     }
 
-    public String getFieldAsText(String selector) {
-        return getHtmlDom().select(selector).first().text();
+    public Element getField(String selector) {
+        return getHtmlDom().select(selector).first();
     }
 
-    public List<String> getFieldsAsText(String selector) {
-        return getHtmlDom().select(selector).eachText();
+    public Element getLastField(String selector) {
+        return getHtmlDom().select(selector).last();
     }
 
     public Date getFieldAsDate(String selector) {
@@ -47,7 +47,35 @@ public class MetacriticPage {
         }
     }
 
-    public Element getField(String selector) {
-        return getHtmlDom().select(selector).first();
+    public Integer getFieldAsInteger(String selector) {
+        try {
+            return Integer.valueOf(getFieldAsText(selector));
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public Integer getLastFieldAsInteger(String selector) {
+        try {
+            return Integer.valueOf(getLastFieldAsText(selector));
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
+    }
+
+    public String getFieldAsText(String selector) {
+        return getField(selector).text();
+    }
+
+    public String getLastFieldAsText(String selector) {
+        return getLastField(selector).text();
+    }
+
+    public List<String> getFieldsAsText(String selector) {
+        return getHtmlDom().select(selector).eachText();
     }
 }

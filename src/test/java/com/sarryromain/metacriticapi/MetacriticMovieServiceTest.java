@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by Romain on 29/07/2017.
  */
-public class MovieTest {
+public class MetacriticMovieServiceTest {
     @Test
     public void movieTest() {
         MetacriticMovieService service = new MetacriticMovieService();

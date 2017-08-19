@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by Romain on 19/08/2017.
  */
-public class GameTest {
+public class MetacriticGameServiceTest {
     @Test
     public void gameTest() {
         MetacriticGameService service = new MetacriticGameService();
