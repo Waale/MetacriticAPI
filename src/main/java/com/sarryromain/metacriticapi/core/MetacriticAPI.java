@@ -1,13 +1,18 @@
 package com.sarryromain.metacriticapi.core;
 
-import com.sarryromain.metacriticapi.core.interfaces.IMetacriticAPI;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 /**
  * Created by Romain on 29/07/2017.
  */
-public class MetacriticAPI implements IMetacriticAPI {
+public class MetacriticAPI {
+    public static final String URL_BASE = "http://www.metacritic.com/";
+
+    public static final String URL_SEARCH = URL_BASE + "search/";
+
+    public static final String URL_SEARCH_END = "/results";
+
     public MetacriticPage getPageByUrl(String url) {
         Document htmlDom = null;
 

@@ -2,7 +2,6 @@ package com.sarryromain.metacriticapi.service;
 
 import com.sarryromain.metacriticapi.core.MetacriticAPI;
 import com.sarryromain.metacriticapi.core.MetacriticPage;
-import com.sarryromain.metacriticapi.core.interfaces.IMetacriticAPI;
 import com.sarryromain.metacriticapi.review.MetacriticGame;
 import com.sarryromain.metacriticapi.review.enums.MetacriticGamePlatform;
 
@@ -25,7 +24,7 @@ public class MetacriticGameService {
     }
 
     public List<String> search(String title) {
-        MetacriticPage page = api.getPageByUrl(MetacriticGame.URL_SEARCH + api.parseNameForUrl(title) + IMetacriticAPI.URL_SEARCH_END);
+        MetacriticPage page = api.getPageByUrl(MetacriticGame.URL_SEARCH + api.parseNameForUrl(title) + MetacriticAPI.URL_SEARCH_END);
         return page.getFieldsAsText(SEARCH_SELECTOR);
     }
 }

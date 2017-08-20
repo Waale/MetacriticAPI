@@ -2,8 +2,6 @@ package com.sarryromain.metacriticapi.service;
 
 import com.sarryromain.metacriticapi.core.MetacriticAPI;
 import com.sarryromain.metacriticapi.core.MetacriticPage;
-import com.sarryromain.metacriticapi.core.interfaces.IMetacriticAPI;
-import com.sarryromain.metacriticapi.review.MetacriticMovie;
 import com.sarryromain.metacriticapi.review.MetacriticTVShow;
 
 import java.util.List;
@@ -25,7 +23,7 @@ public class MetacriticTVShowService {
     }
 
     public List<String> search(String title) {
-        MetacriticPage page = api.getPageByUrl(MetacriticTVShow.URL_SEARCH + api.parseNameForUrl(title) + IMetacriticAPI.URL_SEARCH_END);
+        MetacriticPage page = api.getPageByUrl(MetacriticTVShow.URL_SEARCH + api.parseNameForUrl(title) + MetacriticAPI.URL_SEARCH_END);
         return page.getFieldsAsText(SEARCH_SELECTOR);
     }
 }

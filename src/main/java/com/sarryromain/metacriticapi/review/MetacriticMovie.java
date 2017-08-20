@@ -1,6 +1,6 @@
 package com.sarryromain.metacriticapi.review;
 
-import com.sarryromain.metacriticapi.core.interfaces.IMetacriticAPI;
+import com.sarryromain.metacriticapi.core.MetacriticAPI;
 import com.sarryromain.metacriticapi.core.MetacriticPage;
 
 import java.util.Date;
@@ -10,9 +10,9 @@ import java.util.List;
  * Created by Romain on 29/07/2017.
  */
 public class MetacriticMovie extends MetacriticReview {
-    public static String URL_BASE = IMetacriticAPI.URL_BASE + "movie/";
+    public static String URL_BASE = MetacriticAPI.URL_BASE + "movie/";
 
-    public static String URL_SEARCH = IMetacriticAPI.URL_SEARCH + "movie/";
+    public static String URL_SEARCH = MetacriticAPI.URL_SEARCH + "movie/";
 
     private static final String ACTORS_SELECTOR = ".summary_cast span:not(.label) a";
 

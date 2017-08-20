@@ -1,13 +1,13 @@
 package com.sarryromain.metacriticapi.review;
 
 import com.sarryromain.metacriticapi.core.MetacriticPage;
-import com.sarryromain.metacriticapi.core.interfaces.IMetacriticAPI;
+import com.sarryromain.metacriticapi.core.MetacriticAPI;
 import com.sarryromain.metacriticapi.review.enums.MetacriticGamePlatform;
 
 public class MetacriticGame extends MetacriticReview {
-    public static String URL_BASE = IMetacriticAPI.URL_BASE + "game/";
+    public static String URL_BASE = MetacriticAPI.URL_BASE + "game/";
 
-    public static String URL_SEARCH = IMetacriticAPI.URL_SEARCH + "game/";
+    public static String URL_SEARCH = MetacriticAPI.URL_SEARCH + "game/";
 
     private static final String DEVELOPER_SELECTOR = ".summary_detail.developer .data";
 

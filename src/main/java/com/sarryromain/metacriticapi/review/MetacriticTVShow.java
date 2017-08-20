@@ -1,7 +1,7 @@
 package com.sarryromain.metacriticapi.review;
 
+import com.sarryromain.metacriticapi.core.MetacriticAPI;
 import com.sarryromain.metacriticapi.core.MetacriticPage;
-import com.sarryromain.metacriticapi.core.interfaces.IMetacriticAPI;
 
 import java.util.List;
 
@@ -9,9 +9,9 @@ import java.util.List;
  * Created by Romain on 29/07/2017.
  */
 public class MetacriticTVShow extends MetacriticReview {
-    public static String URL_BASE = IMetacriticAPI.URL_BASE + "tv/";
+    public static String URL_BASE = MetacriticAPI.URL_BASE + "tv/";
 
-    public static String URL_SEARCH = IMetacriticAPI.URL_SEARCH + "tv/";
+    public static String URL_SEARCH = MetacriticAPI.URL_SEARCH + "tv/";
 
     private static final String ACTORS_SELECTOR = ".summary_detail.product_credits .data span span";
 
