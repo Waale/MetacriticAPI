@@ -43,6 +43,10 @@ public abstract class MetacriticReview {
         this.page = page;
     }
 
+    public void addGenre(String genre) {
+        genres.add(genre);
+    }
+
     public List<String> getGenres() {
         return genres;
     }

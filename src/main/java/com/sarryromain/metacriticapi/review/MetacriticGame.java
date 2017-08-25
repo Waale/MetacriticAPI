@@ -28,6 +28,7 @@ public class MetacriticGame extends MetacriticReview {
     private static final String USER_SCORE_SELECTOR = ".score_summary .metascore_anchor div.user";
 
     public MetacriticGame(MetacriticGamePlatform gamePlatform) {
+        super();
         this.gamePlatform = gamePlatform;
     }
 

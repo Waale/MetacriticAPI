@@ -57,12 +57,20 @@ public class MetacriticTVShow extends MetacriticReview {
 
     private Integer seasons = 1;
 
+    public void addActor(String actor) {
+        actors.add(actor);
+    }
+
     public List<String> getActors() {
         return actors;
     }
 
     public void setActors(List<String> actors) {
         this.actors = actors;
+    }
+
+    public void addCreator(String actor) {
+        creators.add(actor);
     }
 
     public List<String> getCreators() {

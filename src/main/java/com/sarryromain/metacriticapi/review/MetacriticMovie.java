@@ -61,6 +61,10 @@ public class MetacriticMovie extends MetacriticReview {
 
     private String runtime;
 
+    public void addActor(String actor) {
+        actors.add(actor);
+    }
+
     public List<String> getActors() {
         return actors;
     }

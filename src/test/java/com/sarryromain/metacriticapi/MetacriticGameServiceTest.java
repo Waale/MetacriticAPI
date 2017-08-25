@@ -36,10 +36,9 @@ public class MetacriticGameServiceTest {
     @Test
     public void gameSearchTest() {
         MetacriticGameService service = new MetacriticGameService();
-        MetacriticAPI api = new MetacriticAPI();
         List<String> games = service.search("Bioshock");
         for (String game : games) {
-            System.out.println(api.parseNameForUrl(game));
+            System.out.println(game);
         }
     }
 }

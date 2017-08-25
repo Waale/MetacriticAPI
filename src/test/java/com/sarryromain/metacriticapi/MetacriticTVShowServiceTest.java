@@ -44,10 +44,9 @@ public class MetacriticTVShowServiceTest {
     @Test
     public void tvShowSearchTest() {
         MetacriticTVShowService service = new MetacriticTVShowService();
-        MetacriticAPI api = new MetacriticAPI();
         List<String> tvShows = service.search("How I Met Your Mother");
         for (String tvShow : tvShows) {
-            System.out.println(api.parseNameForUrl(tvShow));
+            System.out.println(tvShow);
         }
     }
 }

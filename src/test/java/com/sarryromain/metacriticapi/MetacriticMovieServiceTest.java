@@ -40,10 +40,9 @@ public class MetacriticMovieServiceTest {
     @Test
     public void movieSearchTest() {
         MetacriticMovieService service = new MetacriticMovieService();
-        MetacriticAPI api = new MetacriticAPI();
         List<String> movies = service.search("300");
         for (String movie : movies) {
-            System.out.println(api.parseNameForUrl(movie));
+            System.out.println(movie);
         }
     }
 }
