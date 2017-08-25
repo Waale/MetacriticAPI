@@ -5,9 +5,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 /**
  * Created by Romain on 29/07/2017.
@@ -77,5 +75,25 @@ public class MetacriticPage {
 
     public List<String> getFieldsAsText(String selector) {
         return getHtmlDom().select(selector).eachText();
+    }
+
+    public SortedMap<String, String> getAlbumTracks(String numberSelector, String titleSelector) {
+        SortedMap<String, String> tracks = new TreeMap<String, String>();
+        String number;
+        String title;
+
+        List<String> numbers = getFieldsAsText(numberSelector);
+        List<String> titles = getFieldsAsText(titleSelector);
+
+        for (int i = 0; i < numbers.size(); i++ ) {
+            number = numbers.get(i);
+            title = titles.get(i);
+
+            if (number != null && number != "" && title != null && title != "") {
+                tracks.put(number, title);
+            }
+        }
+
+        return tracks;
     }
 }
