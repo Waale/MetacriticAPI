@@ -1,4 +1,4 @@
-package com.sarryromain.service;
+package com.sarryromain.metacriticapi.review.service;
 
 import com.sarryromain.metacriticapi.review.MetacriticAlbum;
 import com.sarryromain.metacriticapi.review.service.MetacriticAlbumService;

@@ -1,4 +1,4 @@
-package com.sarryromain.service;
+package com.sarryromain.metacriticapi.review.service;
 
 import com.sarryromain.metacriticapi.review.MetacriticGame;
 import com.sarryromain.metacriticapi.review.enums.MetacriticGamePlatform;
