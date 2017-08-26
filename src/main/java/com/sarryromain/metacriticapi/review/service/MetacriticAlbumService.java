@@ -1,4 +1,4 @@
-package com.sarryromain.metacriticapi.service;
+package com.sarryromain.metacriticapi.review.service;
 
 import com.sarryromain.metacriticapi.core.MetacriticAPI;
 import com.sarryromain.metacriticapi.core.MetacriticPage;

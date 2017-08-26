@@ -1,8 +1,7 @@
 package com.sarryromain.metacriticapi;
 
-import com.sarryromain.metacriticapi.core.MetacriticAPI;
 import com.sarryromain.metacriticapi.review.MetacriticAlbum;
-import com.sarryromain.metacriticapi.service.MetacriticAlbumService;
+import com.sarryromain.metacriticapi.review.service.MetacriticAlbumService;
 import org.junit.Test;
 
 import java.util.List;

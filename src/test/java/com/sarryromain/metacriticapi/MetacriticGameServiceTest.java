@@ -1,9 +1,8 @@
 package com.sarryromain.metacriticapi;
 
-import com.sarryromain.metacriticapi.core.MetacriticAPI;
 import com.sarryromain.metacriticapi.review.MetacriticGame;
 import com.sarryromain.metacriticapi.review.enums.MetacriticGamePlatform;
-import com.sarryromain.metacriticapi.service.MetacriticGameService;
+import com.sarryromain.metacriticapi.review.service.MetacriticGameService;
 import org.junit.Test;
 
 import java.util.List;
