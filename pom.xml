@@ -8,6 +8,24 @@
     <artifactId>metacritic-api</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <distributionManagement>
+        <repository>
+            <id>ftp-repository</id>
+            <name>Maven Folder</name>
+            <url>ftps://web3.pulseheberg.net</url>
+        </repository>
+    </distributionManagement>
+
+    <build>
+        <extensions>
+            <!-- Enabling the use of FTP -->
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ftp</artifactId>
+            </extension>
+        </extensions>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
