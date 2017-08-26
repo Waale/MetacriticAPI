@@ -3,6 +3,7 @@ package com.sarryromain.metacriticapi.review;
 import com.sarryromain.metacriticapi.core.MetacriticAPI;
 import com.sarryromain.metacriticapi.core.MetacriticPage;
 
+import java.util.Date;
 import java.util.SortedMap;
 
 /**
@@ -35,6 +36,10 @@ public class MetacriticAlbum extends MetacriticReview {
 
     public MetacriticAlbum() {
         super();
+    }
+
+    public MetacriticAlbum(Date releaseDate, String score, String title, String userScore) {
+        super(releaseDate, score, title, userScore);
     }
 
     public MetacriticAlbum(MetacriticPage page, MetacriticPage detailsPage) {

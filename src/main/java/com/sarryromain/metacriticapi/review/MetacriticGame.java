@@ -4,6 +4,8 @@ import com.sarryromain.metacriticapi.core.MetacriticPage;
 import com.sarryromain.metacriticapi.core.MetacriticAPI;
 import com.sarryromain.metacriticapi.review.enums.MetacriticGamePlatform;
 
+import java.util.Date;
+
 public class MetacriticGame extends MetacriticReview {
     public static String URL_BASE = MetacriticAPI.URL_BASE + "game/";
 
@@ -27,9 +29,16 @@ public class MetacriticGame extends MetacriticReview {
 
     private static final String USER_SCORE_SELECTOR = ".score_summary .metascore_anchor div.user";
 
+    public MetacriticGame() {
+    }
+
     public MetacriticGame(MetacriticGamePlatform gamePlatform) {
         super();
         this.gamePlatform = gamePlatform;
+    }
+
+    public MetacriticGame(Date releaseDate, String score, String title, String userScore) {
+        super(releaseDate, score, title, userScore);
     }
 
     public MetacriticGame(MetacriticPage page, MetacriticGamePlatform gamePlatform) {

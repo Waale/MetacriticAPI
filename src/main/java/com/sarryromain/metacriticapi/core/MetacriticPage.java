@@ -1,5 +1,8 @@
 package com.sarryromain.metacriticapi.core;
 
+import com.sarryromain.metacriticapi.person.MetacriticParticipation;
+import com.sarryromain.metacriticapi.review.*;
+import com.sarryromain.metacriticapi.review.enums.MetacriticReviewType;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
@@ -95,5 +98,48 @@ public class MetacriticPage {
         }
 
         return tracks;
+    }
+
+    public List<MetacriticParticipation> getParticipations(String selector, MetacriticReviewType reviewType) {
+        List<MetacriticParticipation> participations = new ArrayList<MetacriticParticipation>();
+        Elements elements = getHtmlDom().select(selector);
+        for (Element element : elements) {
+            MetacriticReview review = null;
+
+            String credit = element.select(".role").first().text();
+            Date date = null;
+            try {
+                date = formatter.parse(element.select(".year").first().text());
+            }
+            catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+            String score = element.select(".metascore_w").first().text();
+            String title = element.select(".title a").first().text();
+            String userScore = element.select(".score .data").first().text();
+
+            switch (reviewType) {
+                case GAMES:
+                    review = new MetacriticGame(date, score, title, userScore);
+                    break;
+                case MOVIES:
+                    review = new MetacriticMovie(date, score, title, userScore);
+                    break;
+                case MUSIC:
+                    review = new MetacriticAlbum(date, score, title, userScore);
+                    break;
+                case TV:
+                    review = new MetacriticTVShow(date, score, title, userScore);
+                    break;
+                default:
+                    break;
+            }
+
+            if (review != null) {
+                participations.add(new MetacriticParticipation(credit, review, reviewType));
+            }
+        }
+
+        return participations;
     }
 }

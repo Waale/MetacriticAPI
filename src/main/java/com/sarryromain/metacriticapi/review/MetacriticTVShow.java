@@ -3,6 +3,7 @@ package com.sarryromain.metacriticapi.review;
 import com.sarryromain.metacriticapi.core.MetacriticAPI;
 import com.sarryromain.metacriticapi.core.MetacriticPage;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -35,6 +36,10 @@ public class MetacriticTVShow extends MetacriticReview {
 
     public MetacriticTVShow() {
         super();
+    }
+
+    public MetacriticTVShow(Date releaseDate, String score, String title, String userScore) {
+        super(releaseDate, score, title, userScore);
     }
 
     public MetacriticTVShow(MetacriticPage page) {

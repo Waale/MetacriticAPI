@@ -17,6 +17,13 @@ public abstract class MetacriticReview {
         setPage(page);
     }
 
+    public MetacriticReview(Date releaseDate, String score, String title, String userScore) {
+        this.releaseDate = releaseDate;
+        this.score = score;
+        this.title = title;
+        this.userScore = userScore;
+    }
+
     MetacriticPage page;
 
     private List<String> genres;

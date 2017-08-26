@@ -40,6 +40,10 @@ public class MetacriticMovie extends MetacriticReview {
         super();
     }
 
+    public MetacriticMovie(Date releaseDate, String score, String title, String userScore) {
+        super(releaseDate, score, title, userScore);
+    }
+
     public MetacriticMovie(MetacriticPage page) {
         super(page);
         setTitle(page.getFieldAsText(TITLE_SELECTOR));

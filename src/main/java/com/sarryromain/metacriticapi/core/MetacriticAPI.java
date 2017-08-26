@@ -30,4 +30,9 @@ public class MetacriticAPI {
     public String parseNameForUrl(String name) {
         return name.replace(" ", "-").replace("'", "").replace(":-", "").replace("&-", "").toLowerCase();
     }
+
+    public String parseNameAndSeasonForUrl(String nameAndSeason) {
+        String[] parts = nameAndSeason.split(": Season ");
+        return parseNameForUrl(parts[0]) + "/season-" + parts[1];
+    }
 }
