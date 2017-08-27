@@ -2,6 +2,9 @@ package metacriticapi.review.service;
 
 import metacriticapi.review.MetacriticMovie;
 import org.junit.Test;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
@@ -13,7 +16,23 @@ public class MetacriticMovieServiceTest {
     public void movieTest() {
         MetacriticMovieService service = new MetacriticMovieService();
         MetacriticMovie movie = service.getByTitle("Assassin's Creed");
-        System.out.println("MOVIE TEST");
+
+        assertNotNull(movie);
+        assertNotNull(movie.getTitle());
+        assertNotNull(movie.getScore());
+        assertNotNull(movie.getUserScore());
+        assertNotNull(movie.getReleaseDate());
+        assertNotNull(movie.getActors());
+        assertFalse(movie.getActors().isEmpty());
+        assertNotNull(movie.getSummary());
+        assertNotNull(movie.getDirector());
+        assertNotNull(movie.getGenres());
+        assertFalse(movie.getGenres().isEmpty());
+        assertNotNull(movie.getRating());
+        assertNotNull(movie.getRuntime());
+        assertNotNull(movie.getTrailer());
+
+        /*System.out.println("MOVIE TEST");
         System.out.println("Title : " + movie.getTitle());
         System.out.println("Score : " + movie.getScore());
         System.out.println("User Score : " + movie.getUserScore());
@@ -32,15 +51,20 @@ public class MetacriticMovieServiceTest {
         System.out.println();
         System.out.println("Rating : " + movie.getRating());
         System.out.println("Runtime : " + movie.getRuntime());
-        System.out.println("Trailer : " + movie.getTrailer());
+        System.out.println("Trailer : " + movie.getTrailer());*/
     }
 
     @Test
     public void movieSearchTest() {
         MetacriticMovieService service = new MetacriticMovieService();
         List<String> movies = service.search("300");
-        for (String movie : movies) {
+
+        assertNotNull(movies);
+        assertFalse(movies.isEmpty());
+        assertTrue(movies.contains("300: Rise of an Empire"));
+
+/*        for (String movie : movies) {
             System.out.println(movie);
-        }
+        }*/
     }
 }

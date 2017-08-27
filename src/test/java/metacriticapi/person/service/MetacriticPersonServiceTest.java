@@ -5,6 +5,9 @@ import metacriticapi.person.MetacriticPerson;
 import metacriticapi.review.MetacriticReview;
 import metacriticapi.review.enums.MetacriticReviewType;
 import org.junit.Test;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
@@ -16,7 +19,27 @@ public class MetacriticPersonServiceTest {
     public void personTest() {
         MetacriticPersonService service = new MetacriticPersonService();
         MetacriticPerson person = service.getByName("Bryan Cranston");
-        System.out.println("PERSON TEST");
+
+        assertNotNull(person);
+        assertNotNull(person.getName());
+        assertNotNull(person.getBiography());
+        assertNotNull(person.getReviewTypes());
+
+        assertNotNull(person.getParticipations());
+        assertFalse(person.getParticipations().isEmpty());
+        for (MetacriticParticipation participation : person.getParticipations()) {
+            assertNotNull(participation.getReviewType());
+            assertNotNull(participation.getCredit());
+
+            MetacriticReview review = participation.getReview();
+            assertNotNull(review);
+            assertNotNull(review.getTitle());
+            assertNotNull(review.getReleaseDate());
+            assertNotNull(review.getScore());
+            assertNotNull(review.getUserScore());
+        }
+
+        /*System.out.println("PERSON TEST");
         System.out.println("Name : " + person.getName());
         System.out.println("Biography : " + person.getBiography());
         System.out.print("Review Types :");
@@ -33,15 +56,20 @@ public class MetacriticPersonServiceTest {
             System.out.println("        Release Date : " + review.getReleaseDate());
             System.out.println("        Score : " + review.getScore());
             System.out.println("        User Score : " + review.getUserScore());
-        }
+        }*/
     }
 
     @Test
-    public void personSearch() {
+    public void personSearchTest() {
         MetacriticPersonService service = new MetacriticPersonService();
         List<String> persons = service.search("Emilia");
-        for (String person : persons) {
+
+        assertNotNull(persons);
+        assertFalse(persons.isEmpty());
+        assertTrue(persons.contains("Emilia Clarke"));
+
+/*        for (String person : persons) {
             System.out.println(person);
-        }
+        }*/
     }
 }

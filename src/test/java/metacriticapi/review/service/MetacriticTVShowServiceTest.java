@@ -2,6 +2,10 @@ package metacriticapi.review.service;
 
 import metacriticapi.review.MetacriticTVShow;
 import org.junit.Test;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
@@ -13,7 +17,24 @@ public class MetacriticTVShowServiceTest {
     public void tvShowTest() {
         MetacriticTVShowService service = new MetacriticTVShowService();
         MetacriticTVShow tvShow = service.getByTitle("Game Of Thrones");
-        System.out.println("TV SHOW TEST");
+
+        assertNotNull(tvShow);
+        assertNotNull(tvShow.getTitle());
+        assertNotNull(tvShow.getScore());
+        assertNotNull(tvShow.getUserScore());
+        assertNotNull(tvShow.getReleaseDate());
+        assertNotNull(tvShow.getActors());
+        assertFalse(tvShow.getActors().isEmpty());
+        assertNotNull(tvShow.getSummary());
+        assertNotNull(tvShow.getCreators());
+        assertFalse(tvShow.getCreators().isEmpty());
+        assertNotNull(tvShow.getGenres());
+        assertFalse(tvShow.getGenres().isEmpty());
+        assertNull(tvShow.getRating());
+        assertNotNull(tvShow.getTrailer());
+        assertNotNull(tvShow.getSeasons());
+
+        /*System.out.println("TV SHOW TEST");
         System.out.println("Title : " + tvShow.getTitle());
         System.out.println("Score : " + tvShow.getScore());
         System.out.println("User Score : " + tvShow.getUserScore());
@@ -36,15 +57,20 @@ public class MetacriticTVShowServiceTest {
         System.out.println();
         System.out.println("Rating : " + tvShow.getRating());
         System.out.println("Trailer : " + tvShow.getTrailer());
-        System.out.println("Seasons : " + tvShow.getSeasons());
+        System.out.println("Seasons : " + tvShow.getSeasons());*/
     }
 
     @Test
     public void tvShowSearchTest() {
         MetacriticTVShowService service = new MetacriticTVShowService();
         List<String> tvShows = service.search("How I Met Your Mother");
-        for (String tvShow : tvShows) {
+
+        assertNotNull(tvShows);
+        assertFalse(tvShows.isEmpty());
+        assertTrue(tvShows.contains("How I Met Your Mother"));
+
+/*        for (String tvShow : tvShows) {
             System.out.println(tvShow);
-        }
+        }*/
     }
 }
